@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Execution Ledger | Local</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Patrick+Hand&family=Permanent+Marker&family=Rock+Salt&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              hand: ['"Patrick Hand"', 'cursive'],
+              marker: ['"Permanent Marker"', 'cursive'],
+              messy: ['"Rock Salt"', 'cursive'],
+              flower: ['"Indie Flower"', 'cursive'],
+            },
+            colors: {
+              paper: {
+                DEFAULT: '#fdfbf7', // Warm creamy paper
+                dark: '#f0e6d2',
+                line: '#aec6cf', // Light blue rule line
+                margin: '#ffb7b2', // Pink margin line
+              },
+              ink: {
+                blue: '#000080',
+                black: '#2c3e50',
+                red: '#c0392b',
+              },
+              pencil: '#7f8c8d',
+              highlighter: {
+                yellow: 'rgba(255, 241, 118, 0.6)',
+                pink: 'rgba(255, 128, 171, 0.4)',
+                green: 'rgba(105, 240, 174, 0.4)',
+              }
+            },
+            backgroundImage: {
+              'ruled-paper': "repeating-linear-gradient(transparent, transparent 31px, #aec6cf 31px, #aec6cf 32px)",
+              'graph-paper': "linear-gradient(#e5e7eb 1px, transparent 1px), linear-gradient(90deg, #e5e7eb 1px, transparent 1px)",
+            },
+            animation: {
+              'wiggle': 'wiggle 1s ease-in-out infinite',
+              'scribble': 'scribble 0.5s ease-in-out forwards',
+            },
+            keyframes: {
+              wiggle: {
+                '0%, 100%': { transform: 'rotate(-1deg)' },
+                '50%': { transform: 'rotate(1deg)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #e3e0cf; /* Desk color */
+        color: #2c3e50;
+        font-family: 'Patrick Hand', cursive;
+        overflow-x: hidden;
+      }
+      
+      /* 3D Context */
+      .scene-3d {
+        perspective: 1000px;
+        transform-style: preserve-3d;
+      }
+      
+      .book-container {
+        transform-style: preserve-3d;
+        transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f0e6d2; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #7f8c8d; 
+        border-radius: 5px;
+        border: 2px solid #f0e6d2;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "recharts": "https://esm.sh/recharts@^3.6.0",
+    "framer-motion": "https://esm.sh/framer-motion@^12.26.2",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "canvas-confetti": "https://esm.sh/canvas-confetti@1.9.2"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

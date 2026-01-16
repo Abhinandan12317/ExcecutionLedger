@@ -1,0 +1,5 @@
+{
+  "name": "Execution Ledger",
+  "description": "A strict, immutable daily tracking system. Runs 100% locally in the browser with no API keys required.",
+  "requestFramePermissions": []
+}
